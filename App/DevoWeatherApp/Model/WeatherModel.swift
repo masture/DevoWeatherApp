@@ -14,6 +14,7 @@ class WeatherModel: ObservableObject {
     public func addCity(name: String) {
         let city = City(name: name)
         cities.append(city)
+        #warning("TODO: After replacing API key uncomment fetchWeather() call and comment mockFetchWeather() call")
 //        fetchWeather(city: name)
         mockFetchWeather(city: name)
     }
