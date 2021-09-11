@@ -9,10 +9,14 @@ import Foundation
 import Combine
 
 
+/// Fetch  weather from: http://api.openweathermap.org
 class WeatherService {
     
+    #warning("Please replace this API key with your own API key")
+    let APKKey = "fa1e5a475001e8240c5ba2fb52496758"
+    
     func fetchWeatherPublisher(city: String) -> AnyPublisher<WeatherResponse, Error> {
-        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=\(city)&units=metric&appid=fa1e5a475001e8240c5ba2fb52496758") else {
+        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=\(city)&units=metric&appid=\(APKKey)") else {
             fatalError()
         }
         print("URL: \(url.absoluteString)")

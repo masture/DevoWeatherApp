@@ -14,8 +14,8 @@ class WeatherModel: ObservableObject {
     public func addCity(name: String) {
         let city = City(name: name)
         cities.append(city)
-        fetchWeather(city: name)
-//        mockFetchWeather(city: name)
+//        fetchWeather(city: name)
+        mockFetchWeather(city: name)
     }
     
     private var cancellables: [AnyCancellable] = []
